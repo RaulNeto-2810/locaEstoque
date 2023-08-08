@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tailwind.css">
+    <title>Locaestoque</title>
+  </head>
+
+  <body>
+
+    <!--cabeçalho-->
+    <nav class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
+      <div class="flex justify-between items-center">
+        <span class="text-2xl cursor-pointer ">
+          <img class="h-10 inline" src="img/logo.jpg" alt="Logo">
+          Locaestoque
+        </span>
+        <span class="3xl cursor-pointer mx-2 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+
+      <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-orange-400 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0 ">
+          <a class="text-xl hover:text-white duration-500 cursor-pointer ">
+            SOBRE NÓS
+          </a>
+        </li>
+        <li class="mx-4 my-6 md:my-0 ">
+          <a class="text-xl hover:text-white duration-500 cursor-pointer ">
+            SISTEMA
+          </a>
+        </li>
+        <li class="mx-4 my-6 md:my-0 ">
+          <a class="text-xl hover:text-white duration-500 cursor-pointer ">
+            FALE CONOSCO
+          </a>
+        </li>
+
+        <!-- Botão de login -->
+        <button onclick="toggleModal()"
+          class="bg-emerald-600 text-white duration-500 px-6 py-2 mx-4 hover:bg-emerald-900 rounded showModal cursor-pointer">
+          LOGIN
+        </button>
+      </ul>
+    </nav>
+    <!--fim cabeçalho-->
+
+    <!--login-->
+    <div id="modal" class="fixed  inset-0 flex items-center justify-center hidden bg-black bg-opacity-75 align-items: center; ">
+      <div class="bg-orange-400 p-6 h-96 w-96 rounded-lg justify-center align-items">
+        <!-- Conteúdo do pop-up de login aqui -->
+        <h1 class="text-center ">Login</h1>
+        <input type="text" placeholder="E-mail" class="mb-2 rounded-md w-80 p-3 items-center mt-16">
+        <input type="password" placeholder="Senha" class="mb-2 rounded-md w-80 p-3 items-center mt-3">
+        <span class="hover:text-white hover:underline transition duration-500 cursor-pointer mx-6">
+          <a href="#">
+            Esqueceu a senha?
+          </a>
+        </span>
+        <br>
+        <button class="bg-emerald-600 text-white duration-500 px-6 hover:bg-emerald-900 rounded p-5 w-full">
+          Entrar
+        </button>
+        <!-- Outros elementos do formulário de login -->
+      </div>
+    </div>
+    <!--fim login-->
+
+    <!--primeira main-->
+    <main class="grid grid-cols-12 gap-4 max-w-4xl mx-auto">
+      <div class="col-span-12 mt-6 mx-40">
+        <span class="text-3xl font-semibold">
+          Faça o simples e venha gerir seu estoque de forma
+        </span>
+        <span class="text-3xl text-orange-400 font-semibold">
+          Totalmente Online<br>
+        </span>
+        <span class="italic text-xl font-semibold">
+          Feito para você que têm uma MicroEmpresa
+        </span>
+      </div>
+
+      <div class=" col-span-6 mt-48 text-justify">
+        <span class="text-lg ">
+          Um gerenciamento de estoque eficaz é essencial para o sucesso de qualquer empresa. Trata-se de um sistema
+          estratégico que visa controlar, organizar e monitorar todos os itens armazenados, desde matérias-primas
+          até produtos acabados.
+        </span>
+      </div>
+
+      <div class="col-span-6 mt-6">
+        <img src="img/imagem_um.png" class="">
+      </div>
+
+      <button class="col-span-12 bg-emerald-600 w-48 text-white duration-500 px-6 py-2 mx-4 hover:bg-emerald-900 rounded">
+        COMEÇAR
+      </button>
+      <!--div do meio que tem que arrumar-->
+
+      <div class="col-span-4 bg-orange-400 rounded-xl mt-32 h-40 text-justify pt-6">
+        <i class="fa-solid fa-mobile fa-shake text-6xl items-center h-16 mx-[7.8rem] " style="color: black;"></i>
+        <br>
+        <span id="contro" class=" text-xl font-semibold text-4xl">
+          Controle seu estoque em tempo real, em qualquer lugar.
+        </span>
+      </div>
+
+      <div class="col-span-4 bg-orange-400 rounded-xl mt-32 h-40 text-justify pt-6">
+        <i class="fa-solid fa-chart-column fa-beat text-6xl items-center h-16 mx-[7.8rem]" style="color: #000000;"></i>
+        <span class="text-xl font-semibold">
+          Relatórios detalhados para melhores tomadas de decisões.
+        </span>
+      </div>
+
+      <div class="col-span-4 bg-orange-400 rounded-xl mt-32 h-40 text-justify pt-6">
+        <i class="fa-solid fa-exclamation fa-spin text-6xl items-center h-16 t-2 mx-[7.8rem]" style="color: #000000;"></i>
+        <span class="text-xl font-semibold">
+          Receba alertas quando o estoque estiver baixo.
+        </span>
+      </div>
+
+    </main>
+
+    <!--segunda main-->
+    <main class="grid grid-cols-12 gap-4 max-w-4xl mx-auto">
+      <div class="col-span-12 mt-8 mx-40">
+        <span class="text-3xl font-semibold">
+          Desfrute de um sistema àgil e fácil para sua gestão
+        </span>
+      </div>
+
+      <div class=" col-span-6 mt-48 text-justify">
+        <span class="text-lg ">
+          O Locaestoque é uma solução gratuita e intuitiva de gerenciamento de estoque baseada na nuvem,
+          compatível com diversos dispositivos e plataformas. Seu aprendizado é prático e fácil,
+          oferecendo um extenso conjunto de informações para sanar todas as suas dúvidas.
+        </span>
+      </div>
+
+      <div class="col-span-6 mt-6">
+        <img src="img/imagem_dois.png" class="">
+      </div>
+
+      <button class="col-span-12 bg-emerald-600 w-48 ml-24 ml-96 text-white duration-500 px-6 py-2 mx-4 hover:bg-emerald-900 rounded">CADASTRE-SE</button>
+    </main>
+
+    <!--terceira main-->
+    <main class="grid grid-cols-12 gap-4 max-w-4xl mx-auto">
+      <div class="col-span-12 mt-8 mx-40">
+        <span class="text-3xl font-semibold">
+          Como funciona o sistema de controle de estoque
+        </span>
+      </div>
+
+      <div class="col-span-6 mt-6">
+        <img src="img/imagem_tres.png" class="">
+      </div>
+
+      <div class=" col-span-6 mt-48 text-justify">
+        <span class="text-lg ">
+          Nosso sistema de controle de estoque é extremamente simples e intuitivo. Com ele,
+          você pode gerenciar a movimentação de mercadorias, registrando todas as entradas e
+          saídas de forma eficiente e eficaz.
+        </span>
+      </div>
+
+    </main>
+
+    <!--quarta main-->
+    <main class="grid grid-cols-12 gap-4 max-w-4xl mx-auto">
+      <div class="col-span-12 mt-8 mx-40">
+        <span class="text-3xl font-semibold">
+          Ferramenta para controle de estoque
+        </span>
+      </div>
+
+      <div class=" col-span-6 mt-40 text-justify">
+        <span class="text-lg ">
+          Com nosso sistema, você pode realizar o controle de vendas de forma eficiente.
+          Além de registrar todas as vendas de maneira simplificada, você também tem a capacidade de atualizar o estoque
+          em tempo real.
+          Tudo isso em uma única tela, facilitando o gerenciamento das suas mercadorias e garantindo um controle preciso
+          do seu estoque.
+        </span>
+      </div>
+
+      <div class="col-span-6 mt-6">
+        <img src="img/imagem_quatro.png" class="">
+      </div>
+
+    </main>
+
+    <!--quinta main-->
+    <main class="grid grid-cols-12 gap-4 max-w-4xl mx-auto">
+      <div class="col-span-12 mt-8 mx-40">
+        <br>
+        <br>
+      </div>
+
+      <div class="col-span-6 mt-6">
+        <img src="img/imagem_cinco.png" class="">
+      </div>
+
+      <div class=" col-span-6 mt-32 text-justify">
+        <span class="text-lg ">
+          Tenha acesso a uma ampla variedade de relatórios, como cotações, compras,
+          inventários, produtos e muito mais. Com nosso sistema, você pode obter informações detalhadas sobre cada item,
+          indicando sua disponibilidade atual. Nossos relatórios fornecem uma visão completa do seu estoque, permitindo
+          decisões precisa e eficaz. Gerencie seu estoque evitando problemas de escassez e excesso, e otimize sua operação
+          para maior
+          eficiência e rentabilidade.
+        </span>
+      </div>
+
+    </main>
+
+    <!--sexta main-->
+    <main class="grid grid-cols-12 gap-4 max-w-4xl mx-auto">
+      <div class="col-span-12 mt-8 mx-40">
+        <span class="text-3xl font-semibold">
+          <br>
+          <br>
+        </span>
+      </div>
+
+      <div class=" col-span-6 mt-40 text-justify">
+        <span class="text-lg ">
+          Com nosso sistema, você pode realizar o controle de vendas de forma eficiente.
+          Além de registrar todas as vendas de maneira simplificada, você também tem a capacidade de atualizar o estoque
+          em tempo real.
+          Tudo isso em uma única tela, facilitando o gerenciamento das suas mercadorias e garantindo um controle preciso
+          do seu estoque.
+        </span>
+      </div>
+
+      <div class="col-span-6 mt-6">
+        <img src="img/imagem_seis.png" class="">
+      </div>
+
+    </main>
+
+    <!--setima main-->
+    <main class="grid grid-cols-12 gap-4 max-w-4xl mx-auto">
+      <div class="col-span-12 mt-24 mx-40">
+        <span class="text-4xl font-semibold">
+          DUVIDAS? ENTRE EM CONTATO CONOSCO
+        </span>
+      </div>
+
+      <button class="col-span-12 bg-emerald-600 w-48 ml-24 ml-96 text-white duration-500 px-6 py-2 mx-4 hover:bg-emerald-900 rounded">FALE CONOSCO</button>
+
+    </main>
+
+    <!--aqui falta o footer-->
+    <footer class="bg-black h-32 w-full mt-32 grid grid-cols-12">
+      <ul class="col-span-6 text-white mx-8 mt-8">
+        <li>
+          <a class="cursor-pointer">EMPRESA</a>
+        </li>
+        <li>
+          <a class="cursor-pointer">INICIO</a>
+        </li>
+        <li>
+          <a class="cursor-pointer">POLITICA DE PRIVACIDADE</a>
+        </li>
+      </ul>
+
+      <!--segundo footer-->
+      <ul class="col-span-6 text-white mx-8 mt-8">
+        <li>
+          <a class="cursor-pointer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a class="cursor-pointer">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a class="cursor-pointer">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </li>
+      </ul>
+
+    </footer>
+
+    <script src="stylos.js"></script>
+    </script>
+  </body>
+</html>

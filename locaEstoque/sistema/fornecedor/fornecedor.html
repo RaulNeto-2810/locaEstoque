@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Fornecedor</title>
+  </head>
+
+  <body>
+    <header class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
+      <div class="flex justify-between items-center">
+        <span class="text-2xl cursor-pointer font-bold">
+          <img class="h-20 w-20 inline" src="../../paginaInicial/img/logo.jpg" alt="Logo">
+          Locaestoque
+        </span>
+        <span class="3xl cursor-pointer mx-2 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+
+      <div class="md:flex md:items-center gap-6 me-6">
+        <a>
+          <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
+        </a>
+        <a>
+          <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
+        </a>
+      </div>
+
+    </header>
+
+    <main class="grid grid-cols-20 gap-4 max-w-8xl mx-auto md:text-xl">
+      <div class="h-20 bg-zinc-300 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 md:w-9/12 lg:w-75% ">
+        <span class="material-symbols-outlined text-6xl mx-6">groups</span>
+        <span class="text-2xl font-bold">Fornecedores</span>
+      </div>
+
+      <section class="col-span-12 flex justify-center items-center mt-4 space-x-8">
+        <button id="abrirModalc">
+          <div class="bg-emerald-600 h-20 w-72 flex items-center rounded-3xl hover:bg-green-700 transform hover:scale-110 transition-all duration-800 ">
+            <span class="flex items-center text-lg font-bold text-white">
+              <span class="material-symbols-outlined text-3xl mx-2">add</span>
+              Cadastrar Fornecedores
+            </span>
+          </div>
+        </button>
+
+        <div id="modalc" class="hidden fixed inset-0 flex items-center justify-center z-10">
+          <form class="mt-4 mx-auto p-6 md:p-8 bg-white rounded-xl shadow-md relative max-w-xs md:max-w-sm md:h-auto" action method="post">
+            <span class="fecharc text-4xl absolute top-2 right-2 cursor-pointer">&times;</span>
+            <div class="mb-4">
+              <label for="name" class="block text-black text-xl font-bold uppercase">Nome:</label>
+              <input type="text" id="nome" name="nome" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
+            </div>
+
+            <div class="mb-4">
+              <label for="address" class="block text-black text-xl font-bold uppercase">Endereço:</label>
+              <input type="text" id="endereco" name="endereco" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
+            </div>
+
+            <div class="mb-4">
+              <label for="phone" class="block text-black text-xl font-bold uppercase">Telefone:</label>
+              <input type="tel" id="telefone" name="telefone" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
+            </div>
+
+            <div class="mb-4">
+              <label for="cpf" class="block text-black text-xl font-bold uppercase">CPF:</label>
+              <input type="text" id="cpf" name="cpf" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
+            </div>
+
+            <div class="flex justify-center mt-8">
+              <button type="submit" class="px-6 py-3 bg-emerald-600 text-white font-bold uppercase rounded hover:bg-green-700">Enviar</button>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="bg-emerald-600 h-20 w-72 flex items-center rounded-3xl hover:bg-green-700 transform hover:scale-110 transition-all duration-800">
+          <span class="flex items-center text-lg font-bold text-white">
+            <span class="material-symbols-outlined text-3xl mx-3">search</span>
+            Buscar Fornecedores
+          </span>
+        </div>
+
+        <div class="bg-emerald-600 h-20 w-72 flex items-center rounded-3xl hover:bg-green-700 transform hover:scale-110 transition-all duration-800">
+          <span class="flex items-center text-lg font-bold text-white">
+            <span class="material-symbols-outlined text-3xl mx-6 ">edit</span>
+            Editar
+          </span>
+        </div>
+
+      </section>
+
+      <div class="bg-amber-600 h-20 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-10/12 md:w-9/12 lg:w-75% "></div>
+      <div class="bg-zinc-300 h-96 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-10/12 md:w-9/12 lg:w-75% "></div>
+    </main>
+    <script>
+      var modalc = document.getElementById("modalc");
+      var btnFechar = document.getElementsByClassName("fecharc")[0];
+      var btnAbrir = document.getElementById("abrirModalc");
+
+      // Função para abrir o modal
+      function abrirModal() {
+        modalc.style.display = "block";
+      }
+
+      // Função para fechar o modal
+      function fecharModal() {
+        modalc.style.display = "none";
+      }
+
+      // Adicionar evento de clique ao botão de abertura
+      btnAbrir.addEventListener("click", abrirModal);
+
+      // Adicionar evento de clique ao botão de fechamento
+      btnFechar.addEventListener("click", fecharModal);
+
+      // Adicionar evento de clique fora do modal para fechá-lo
+      window.addEventListener("click", function (event) {
+        if (event.target == modalc) {
+          fecharModal();
+        }
+      });
+    </script>
+  </body>
+  <form action method="post"></form>
+</html>
