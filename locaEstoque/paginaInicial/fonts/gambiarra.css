@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Nunito' ;
+    src: url(Nunito-Regular.ttf) format(ttf);
+    font-family: 'Yanone';
+    src: url(YanoneKaffeesatz-Regular.ttf) format(ttf);
+    font-family: 'BebasNeue';
+    src: url(BebasNeue-Regular.ttf) format(ttf);
+}
+span#text {
+    font-family: 'Nunito';
+}
+button#botton{
+    font-family: 'Yanone';
+}
+#title{
+    font-family: 'BebasNeue';
+}
