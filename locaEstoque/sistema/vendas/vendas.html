@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <title>Vendas</title>
-    </head>
-
-    <body>
-        <header class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
-            <div class="flex justify-between items-center">
-                <span class="text-2xl cursor-pointer font-bold">
-                    <img class="h-20 w-20 inline" src="../../paginaInicial/img/logo.jpg" alt="Logo">
-                    Locaestoque
-                </span>
-                <span class="3xl cursor-pointer mx-2 md:hidden block">
-                    <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-                </span>
-            </div>
-
-            <div class="md:flex md:items-center gap-6 me-6">
-                <a>
-                    <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
-                </a>
-                <a>
-                    <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
-                </a>
-            </div>
-        </header>
-
-        <main class="grid grid-cols-20 gap-4 max-w-8xl mx-auto">
-            <div class="h-20 bg-zinc-300 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-10/12 ">
-                <span class="material-symbols-outlined text-6xl md:text-6xl m-8 md:m-4">attach_money</span>
-                <span class="text-2xl font-bold">Vendas</span>
-            </div>
-
-            <section class="col-span-12 flex justify-center items-center mt-0 space-x-8">
-                <form class="mt-4 mx-auto p-6 md:p-8 bg-white rounded-xl relative max-w-xs md:max-w-sm md:h-auto" action method="post">
-                    <div class="mb-4">
-                        <label for="Produto" class="block text-black text-xl font-bold uppercase">Produto:</label>
-                        <input type="text" id="Produto" name="Produto" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="Quantidade" class="block text-black text-xl font-bold uppercase">Quantidade:</label>
-                        <input type="number" id="qtd" name="qtd" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
-                    </div>
-
-                    <select name="Cliente" id>
-                        <option value="cliente"></option>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Document</title>
+</head>
+<body>
+<header class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
+    <div class="flex justify-between items-center">
+        <div class="flex items-center">
+            <img class="h-20 w-20 inline" src="Logo.png" alt="Logo">
+            <span class="text-2xl cursor-pointer font-bold mx-4">
+              <span class="w-[291.29px] h-[45px] text-center text-black text-[39px] font-bold uppercase leading-10 tracking-tight" style="font-family: 'Zilla Slab Highlight', cursive;">
+                Locaestoque
+              </span>
+            </span>
+          </div>
+        <span class="3xl cursor-pointer mx-2 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+    </div>
+    <div class="md:flex md:items-center gap-6 me-6">
+        <a>
+            <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
+        </a>
+        <a>
+            <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
+        </a>
+    </div>
+</header>
+<main class="grid grid-cols-20 gap-4 max-w-8xl mx-auto">
+     <div class="h-20 bg-zinc-300 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-9/12 "> 
+        <span class="material-symbols-outlined text-6xl md:text-6xl m-8 md:m-4">
+            attach_money
+        </span>
+        <span class="text-2xl font-bold">
+           Vendas
+        </span>
+    </div>
+    <section class="col-span-12 flex justify-center items-center mt-4 md:mt-2">
+        <form class="mt-4 mx-auto p-6 md:p-8 bg-white rounded-xl max-w-xl md:max-w-2xl" action="" method="post">
+            <div class="mb-6 grid grid-cols-2 gap-4">
+                <div>
+                    <label for="produto" class="block text-gray-800 text-lg font-bold mb-2">Escolha o Produto:</label>
+                    <select name="Produto" id="produto" class="w-full h-12 bg-gray-200 rounded-lg px-4 text-lg focus:outline-none focus:ring focus:border-blue-300">
+                        <option>Produto</option>
+                        <option>Produto2</option>
+                        <option>Produto3</option>
+                        <option>Produto4</option>
                     </select>
+                </div>
+                <div>
+                    <label for="Quantidade" class="block text-gray-800 text-lg font-bold mb-2">Quantidade:</label>
+                    <input type="number" id="qtd" name="qtd" class="w-full h-12 bg-gray-200 rounded-lg px-4 text-lg focus:outline-none focus:ring focus:border-blue-300">
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="cliente" class="block text-gray-800 text-lg font-bold mb-2">Escolha o Cliente:</label>
+                <select name="Cliente" id="cliente" class="w-full h-12 bg-gray-200 rounded-lg px-4 text-lg focus:outline-none focus:ring focus:border-blue-300">
+                    <option>Cliente</option>
+                    <option>Cliente2</option>
+                    <option>Cliente3</option>
+                    <option>Cliente4</option>
+                </select>
+            </div>
+            <div class="mb-6">
+                <label class="flex items-center text-gray-700">
+                    <input type="radio" id="radio-generic" class="h-6 w-6">
+                    <span class="ml-2">Cliente Genérico</span>
+                </label>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="px-24 py-8 bg-emerald-600 text-xl text-white font-bold rounded-full hover:bg-green-700 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring focus:border-blue-300">Finalizar</button>
+            </div>
+        </form>
+    </section>
+</main>
 
-                    <input type="radio">
-                    <label class="font-bold">CLIENTE GENÊRICO</label>
-                    <div class="flex justify-center mt-8">
-                        <button type="submit" class="px-6 py-3 bg-emerald-600 text-white font-bold uppercase rounded hover:bg-green-700">Finalizar</button>
-                    </div>
-                </form>
-            </section>
-        </main>
-    </body>
+</body>
 </html>
+<script>
+    const radioGeneric = document.getElementById('radio-generic');
+    
+    document.addEventListener('click', (event) => {
+        if (!radioGeneric.contains(event.target)) {
+            radioGeneric.checked = false;
+        }
+    });
+</script>
