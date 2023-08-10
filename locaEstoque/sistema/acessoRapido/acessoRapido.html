@@ -26,27 +26,27 @@
         </span>
     </div>
     <div class="md:flex md:items-center gap-6 me-6">
-        <button id="abrirModalf">
+      <button id="abrirModalf">
         <a>
             <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
         </a>
     </button>
-<!-- Modal de Mensagens -->
-<div id="modalf" class="hidden fixed inset-0 flex items-center justify-end z-10 top-[-25%]">
-  <div class="mt-4 mr-4 p-6 md:p-8 bg-amber-600 rounded-xl shadow-md relative max-w-xs md:max-w-sm md:h-auto right-0">
-      <span class="fecharf text-4xl absolute top-2 right-2 cursor-pointer">&times;</span>
-      <a class="mt-4">
-          <i class="fa-solid fa-envelope text-4xl"> MENSAGENS</i>
-      </a>
-      <div class="mt-4 w-80 h-80 bg-amber-100 rounded-3xl"></div>
-  </div>
-</div>
+    <!-- Modal de Mensagens -->
+    <div id="modalf" class="hidden fixed inset-0 flex items-center justify-end z-10 top-[-25%] transition-opacity duration-300 opacity-0">
+        <div class="mt-4 mr-4 p-6 md:p-8 bg-amber-600 rounded-xl shadow-md relative max-w-xs md:max-w-sm md:h-auto right-0">
+            <span class="fecharf text-4xl absolute top-2 right-2 cursor-pointer">&times;</span>
+            <a class="mt-4">
+                <i class="fa-solid fa-envelope text-4xl"> MENSAGENS</i>
+            </a>
+            <div class="mt-4 w-80 h-80 bg-amber-100 rounded-3xl"></div>
+        </div>
+    </div>
 <button id="abrirModalco">
         <a>
             <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
         </a>
 </button>
-<div id="modalco" class="hidden fixed inset-0 flex items-center justify-end z-10 top-[-60%]">
+<div id="modalco" class="hidden fixed inset-0 flex items-center justify-end z-10 top-[-60%] transition-opacity duration-300 opacity-0">
   <div class="mt-4 mr-4 p-6 md:p-8 bg-amber-600 rounded-xl shadow-md relative max-w-xs md:max-w-sm md:h-auto right-0">
       <span class="fecharco text-4xl absolute top-2 right-2 cursor-pointer">&times;</span>
       <a class="block mt-4 text-center">
@@ -56,8 +56,7 @@
       <button class="block w-full bg-red-500 text-gray-700 px-4 py-2 rounded-md mt-2 hover:bg-red-600 transition duration-300">Sair</button>
   </div>
 </div>
-
-</div>
+    </div>
 </header>
 <main class="grid grid-cols-20 gap-8 max-w-8xl mx-auto">
     <div class="h-20 bg-zinc-300 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-9/12"> 
@@ -107,39 +106,56 @@
 </body>
 </html>
 <script>
- document.addEventListener("DOMContentLoaded", function () {
-  const abrirModalfButton = document.getElementById("abrirModalf");
-  const fecharModalfButton = document.querySelector("#modalf .fecharf");
-  const modalf = document.getElementById("modalf");
+  document.addEventListener("DOMContentLoaded", function () {
+      const abrirModalfButton = document.getElementById("abrirModalf");
+      const fecharModalfButton = document.querySelector("#modalf .fecharf");
+      const modalf = document.getElementById("modalf");
 
-  const abrirModalcoButton = document.getElementById("abrirModalco");
-  const fecharModalcoButton = document.querySelector("#modalco .fecharco");
-  const modalco = document.getElementById("modalco");
+      const abrirModalcoButton = document.getElementById("abrirModalco");
+      const fecharModalcoButton = document.querySelector("#modalco .fecharco");
+      const modalco = document.getElementById("modalco");
 
-  abrirModalfButton.addEventListener("click", () => {
-    modalf.classList.remove("hidden");
+      abrirModalfButton.addEventListener("click", () => {
+          modalf.classList.remove("hidden");
+          setTimeout(() => {
+              modalf.classList.add("opacity-100");
+          }, 10); // Adicione um pequeno atraso para que a transição seja visível
+      });
+
+      fecharModalfButton.addEventListener("click", () => {
+          modalf.classList.remove("opacity-100");
+          setTimeout(() => {
+              modalf.classList.add("hidden");
+          }, 300);
+      });
+
+      abrirModalcoButton.addEventListener("click", () => {
+          modalco.classList.remove("hidden");
+          setTimeout(() => {
+              modalco.classList.add("opacity-100");
+          }, 10); // Adicione um pequeno atraso para que a transição seja visível
+      });
+
+      fecharModalcoButton.addEventListener("click", () => {
+          modalco.classList.remove("opacity-100");
+          setTimeout(() => {
+              modalco.classList.add("hidden");
+          }, 300);
+      });
+
+      window.addEventListener("click", (event) => {
+          if (event.target === modalf) {
+              modalf.classList.remove("opacity-100");
+              setTimeout(() => {
+                  modalf.classList.add("hidden");
+              }, 300);
+          }
+          if (event.target === modalco) {
+              modalco.classList.remove("opacity-100");
+              setTimeout(() => {
+                  modalco.classList.add("hidden");
+              }, 300);
+          }
+      });
   });
-
-  fecharModalfButton.addEventListener("click", () => {
-    modalf.classList.add("hidden");
-  });
-
-  abrirModalcoButton.addEventListener("click", () => {
-    modalco.classList.remove("hidden");
-  });
-
-  fecharModalcoButton.addEventListener("click", () => {
-    modalco.classList.add("hidden");
-  });
-
-  window.addEventListener("click", (event) => {
-    if (event.target === modalf) {
-      modalf.classList.add("hidden");
-    }
-    if (event.target === modalco) {
-      modalco.classList.add("hidden");
-    }
-  });
-});
-
 </script>
