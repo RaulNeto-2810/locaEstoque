@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locaestoque</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+              <img class="h-20 w-20 inline" src="../../paginaInicial/img/logo.jpg" alt="Logo">
+              <span class="text-2xl cursor-pointer font-bold mx-4">
+                <span class="w-[291.29px] h-[45px] text-center text-black text-[39px] font-bold uppercase leading-10 tracking-tight" style="font-family: 'Zilla Slab Highlight', cursive;">
+                  Locaestoque
+                </span>
+              </span>
+            </div>
+              <span class="3xl cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+              </span>
+          </div>
+          <div class="md:flex md:items-center gap-6 me-6">
+              <a>
+                  <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
+              </a>
+              <a>
+                  <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
+              </a>
+          </div>
+      </header>
+
+      <div class="container mx-auto px-4 py-8">
+
+        <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Sobre Nós</h2>
+            <p>Com entusiasmo, apresentamos os fundadores do <strong>Locaestoque</strong>, alunos da pioneira turma do curso Técnico de Desenvolvimento de Sistemas do SENAC, por meio do Projeto Trilhas do Futuro. Com meses de dedicação, pesquisa e colaboração, desenvolvemos um Sistema de Controle de Estoque abrangente e eficiente. Estamos orgulhosos de compartilhar nossa conquista e mostrar como o Locaestoque pode otimizar operações empresariais. Juntos, estamos moldando o futuro da tecnologia!</p>
+        </div>
+        <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
+            <h3 class="text-xl font-semibold mb-2">Nossa Missão</h3>
+            <p>Nossa missão é revolucionar a forma como as empresas lidam com seus estoques, proporcionando ferramentas avançadas e consultoria especializada para otimização de processos, redução de custos e maximização da lucratividade.</p>
+        </div>
+        
+        <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
+            <h3 class="text-xl font-semibold mb-2">Nossa Abordagem</h3>
+            <p>Acreditamos que o gerenciamento de estoque eficaz é a base para o sucesso operacional. Combinamos tecnologia de ponta com estratégias inteligentes para fornecer soluções personalizadas que atendam às necessidades específicas de cada cliente.</p>
+        </div>
+        
+        <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
+            <h3 class="text-xl font-semibold mb-2">Nossa Equipe</h3>
+            <p>Nossa equipe é composta por profissionais altamente qualificados e experientes em logística, análise de dados e tecnologia da informação. Trabalhamos em estreita colaboração com nossos clientes para entender seus desafios e oferecer soluções que impulsionam resultados tangíveis.</p>
+        </div>
+        
+        <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
+            <h3 class="text-xl font-semibold mb-2">Compromisso com a Qualidade</h3>
+            <p>Estamos comprometidos com a excelência em tudo o que fazemos. Nossas soluções são projetadas para serem escaláveis, flexíveis e confiáveis, garantindo que nossos clientes tenham uma vantagem competitiva duradoura.</p>
+        </div>
+        
+        <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6">
+            <h3 class="text-xl font-semibold mb-2">Entre em Contato</h3>
+            <p>Queremos ajudar sua empresa a atingir seu máximo potencial por meio de um gerenciamento de estoque inteligente e eficaz. Entre em contato conosco para saber mais sobre nossos serviços e como podemos trabalhar juntos para alcançar seus objetivos.</p>
+            <p><strong>Email:</strong> contato@locaestoque.com</p>
+            <p><strong>Telefone:</strong> (34) 99999-9999</p>
+        </div>
+    </div>
+
+    <footer class="bg-black h-32 w-full mt-32 grid grid-cols-12">
+        <ul class="col-span-6 text-white mx-8 mt-8">
+          <li>
+            <a class="cursor-pointer">EMPRESA</a>
+          </li>
+          <li>
+            <a class="cursor-pointer">INICIO</a>
+          </li>
+          <li>
+            <a class="cursor-pointer">POLITICA DE PRIVACIDADE</a>
+          </li>
+        </ul>
+
+        <!--segundo footer-->
+        <ul class="col-span-6 text-white mx-8 mt-8">
+          <li>
+            <a class="cursor-pointer">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a class="cursor-pointer">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="cursor-pointer">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+        </ul>
+    
+      </footer>
+</body>
+</html>
