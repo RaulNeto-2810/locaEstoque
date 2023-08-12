@@ -26,6 +26,7 @@
 </head>
 
 <body>
+
   <!--cabeçalho-->
   <nav class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
     <div class="flex justify-between items-center">
@@ -42,17 +43,13 @@
       md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0
       top-[-400px] transition-all ease-in duration-500">
       <li class="mx-4 my-6 md:my-0 ">
-        <a href="sobre.html" class="text-xl hover:text-white duration-500 cursor-pointer ">
+        <a href="sobre.html" class="text-xl hover:text-white duration-500 cursor-pointer "> <!-- Redireciona para uma nova página -->
           SOBRE NÓS
         </a>
       </li>
+      <!-- Retirada do Botão Sistema - 11-08-2023 --> 
       <li class="mx-4 my-6 md:my-0 ">
-        <a class="text-xl hover:text-white duration-500 cursor-pointer ">
-          SISTEMA
-        </a>
-      </li>
-      <li class="mx-4 my-6 md:my-0 ">
-        <a href="#final" class="text-xl hover:text-white duration-500 cursor-pointer ">
+        <a href="#final" class="text-xl hover:text-white duration-500 cursor-pointer "> <!-- Redireciona para o final da página-->
           FALE CONOSCO
         </a>
       </li>
@@ -66,6 +63,7 @@
     </ul>
   </nav>
   <!--fim cabeçalho-->
+
   <!--login-->
   <div id="modal" class="fixed  inset-0 flex items-center justify-center hidden bg-black bg-opacity-75 align-items: center; ">
     <div class="bg-orange-400 p-6 h-[25rem] w-96 rounded-lg justify-center align-items">
