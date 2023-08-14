@@ -7,180 +7,88 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <title>Venda</title>
+    <title>Document</title>
 </head>
-<style>
-  #searchButton.expanded {
-    width: 400px;
-    background-color: #47A957; /* Cor do botão ao ser expandido */
-    transition: width 0.8s ease-in-out, background-color 0.3s ease-in-out;
-  }
-
-  #searchInput {
-    display: none;
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #47A957; /* Mesma cor do botão */
-    border-radius: 5px;
-    font-size: 16px;
-  }
-</style>
 <body>
 <header class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
-  <div class="flex justify-between items-center">
-    <div class="flex items-center">
-        <img class="h-20 w-20 inline" src="../../paginaInicial/img/logo.jpg" alt="Logo">
-        <span class="text-2xl cursor-pointer font-bold mx-4">
-          <span class="w-[291.29px] h-[45px] text-center text-black text-[39px] font-bold uppercase leading-10 tracking-tight" style="font-family: 'Zilla Slab Highlight', cursive;">
-            Locaestoque
-          </span>
+    <div class="flex justify-between items-center">
+        <div class="flex items-center">
+            <img class="h-20 w-20 inline" src="Logo.png" alt="Logo">
+            <span class="text-2xl cursor-pointer font-bold mx-4">
+              <span class="w-[291.29px] h-[45px] text-center text-black text-[39px] font-bold uppercase leading-10 tracking-tight" style="font-family: 'Zilla Slab Highlight', cursive;">
+                Locaestoque
+              </span>
+            </span>
+          </div>
+        <span class="3xl cursor-pointer mx-2 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
         </span>
-      </div>
-      <span class="3xl cursor-pointer mx-2 md:hidden block">
-        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-      </span>
-  </div>
-  <div class="md:flex md:items-center gap-6 me-6">
-      <a>
-          <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
-      </a>
-      <a>
-          <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
-      </a>
-  </div>
-
+    </div>
+    <div class="md:flex md:items-center gap-6 me-6">
+        <a>
+            <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
+        </a>
+        <a>
+            <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
+        </a>
+    </div>
 </header>
 <main class="grid grid-cols-20 gap-4 max-w-8xl mx-auto">
      <div class="h-20 bg-zinc-300 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-9/12 "> 
-        <span class="material-symbols-outlined text-6xl m-8">
-            shopping_bag
-            </span>
+        <span class="material-symbols-outlined text-6xl md:text-6xl m-8 md:m-4">
+            attach_money
+        </span>
         <span class="text-2xl font-bold">
-           Produtos
+           Vendas
         </span>
     </div>
-    <section class="col-span-12 flex justify-center items-center mt-4 space-x-8">
-      <button id="abrirModalp"><div class="bg-emerald-600 h-20 w-72 flex items-center rounded-3xl hover:bg-green-700 transform hover:scale-110 transition-all duration-800 ">
-        <span class="flex items-center text-lg font-bold text-white">
-          <span class="material-symbols-outlined text-3xl mx-2">
-            add
-          </span>
-          Cadastrar Produtos
-        </span>
-      </div>
-    </button> 
-    <div id="modalp" class="hidden fixed inset-0 flex items-center justify-center z-10">
-      <form class="mt-4 mx-auto p-6 md:p-8 bg-white rounded-xl shadow-md relative max-w-xs md:max-w-sm md:h-auto" action="" method="post">
-          <span class="fecharp text-4xl absolute top-2 right-2 cursor-pointer">&times;</span>
-          <div class="mb-4">
-              <label for="name" class="block text-black text-xl font-bold uppercase">Nome:</label>
-              <input type="text" id="nome" name="nome" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
-          </div>
-          <div class="mb-4">
-              <label for="Quantidade" class="block text-black text-xl font-bold uppercase">Quantidade:</label>
-              <input type="number" id="Quantidade" name="Quantidade" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
-          </div>
-          <div class="mb-4">
-              <label for="valor" class="block text-black text-xl font-bold uppercase">Valor:</label>
-              <input type="number" id="valor" name="valor" class="w-full h-10 md:h-12 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
-          </div>
-          <div class="mb-4">
-            <label for="descricao" class="block text-black text-xl font-bold uppercase">Descrição:</label>
-            <input type="text" id="descricao" name="descricao" class="w-full h-14 md:h-16 bg-gray-300 rounded-full px-4 md:px-8 text-xl">
-        </div>        
-          <div class="flex justify-center mt-8">
-              <button type="submit" class="px-6 py-3 bg-emerald-600 text-white font-bold uppercase rounded hover:bg-green-700 transform hover:scale-110 transition-all duration-800">Cadastrar</button>
-          </div>
-      </form>
-  </div>
-  <div id="searchButton" class="bg-emerald-600 h-20 w-72 flex items-center rounded-3xl hover:bg-green-700 transform hover:scale-110 transition-all duration-800">
-    <span class="flex items-center text-lg font-bold text-white">  
-<span class="material-symbols-outlined text-3xl mx-3"> search </span> Buscar Produtos
-    </span>
-  </div>
-          <div class="bg-emerald-600 h-20 w-72 flex items-center rounded-3xl hover:bg-green-700 transform hover:scale-110 transition-all duration-800">
-            <span class="flex items-center text-lg font-bold text-white">
-                <span class="material-symbols-outlined text-3xl mx-6 ">
-                    edit
-                    </span>
-             Editar
-            </span>
-          </div>
+    <section class="col-span-12 flex justify-center items-center mt-4 md:mt-2">
+        <form class="mt-4 mx-auto p-6 md:p-8 bg-white rounded-xl max-w-xl md:max-w-2xl" action="" method="post">
+            <div class="mb-6 grid grid-cols-2 gap-4">
+                <div>
+                    <label for="produto" class="block text-gray-800 text-lg font-bold mb-2">Escolha o Produto:</label>
+                    <select name="Produto" id="produto" class="w-full h-12 bg-gray-200 rounded-lg px-4 text-lg focus:outline-none focus:ring focus:border-blue-300">
+                        <option>Produto</option>
+                        <option>Produto2</option>
+                        <option>Produto3</option>
+                        <option>Produto4</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Quantidade" class="block text-gray-800 text-lg font-bold mb-2">Quantidade:</label>
+                    <input type="number" id="qtd" name="qtd" class="w-full h-12 bg-gray-200 rounded-lg px-4 text-lg focus:outline-none focus:ring focus:border-blue-300">
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="cliente" class="block text-gray-800 text-lg font-bold mb-2">Escolha o Cliente:</label>
+                <select name="Cliente" id="cliente" class="w-full h-12 bg-gray-200 rounded-lg px-4 text-lg focus:outline-none focus:ring focus:border-blue-300">
+                    <option>Cliente</option>
+                    <option>Cliente2</option>
+                    <option>Cliente3</option>
+                    <option>Cliente4</option>
+                </select>
+            </div>
+            <div class="mb-6">
+                <label class="flex items-center text-gray-700">
+                    <input type="radio" id="radio-generic" class="h-6 w-6">
+                    <span class="ml-2">Cliente Genérico</span>
+                </label>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="px-24 py-8 bg-emerald-600 text-xl text-white font-bold rounded-full hover:bg-green-700 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring focus:border-blue-300">Finalizar</button>
+            </div>
+        </form>
     </section>
-        <div class="bg-amber-600 h-20 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-9/12 "> 
-        </div>
-<div class="bg-zinc-300 h-96 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-9/12 "></div>
 </main>
-<script>
-  var modalp = document.getElementById("modalp");
-  var btnFechar = document.getElementsByClassName("fecharp")[0];
-  var btnAbrir = document.getElementById("abrirModalp");
 
-  // Função para abrir o modal
-  function abrirModal() {
-    modalp.style.display = "block";
-  }
-
-  // Função para fechar o modal
-  function fecharModal() {
-    modalp.style.display = "none";
-  }
-
-  // Adicionar evento de clique ao botão de abertura
-  btnAbrir.addEventListener("click", abrirModal);
-
-  // Adicionar evento de clique ao botão de fechamento
-  btnFechar.addEventListener("click", fecharModal);
-
-  // Adicionar evento de clique fora do modal para fechá-lo
-  window.addEventListener("click", function (event) {
-    if (event.target == modalp) {
-      fecharModal();
-    }
-  });
-  const searchButton = document.getElementById('searchButton');
-    const searchInput = document.createElement('input');
-    searchInput.id = 'searchInput';
-    searchInput.placeholder = 'Digite o nome do produto';
-    searchInput.className = 'w-full py-2 px-3 border border-emerald-600 rounded-md';
-
-    let isExpanded = false; // Controla o estado de expansão
-
-    searchButton.addEventListener('click', () => {
-       if (!isExpanded) {
-        searchButton.classList.add('w-96')
-
-    const searchButton = document.getElementById('searchButton');
-    const searchInput = document.createElement('input');
-    searchInput.id = 'searchInput';
-    searchInput.placeholder = 'Digite o nome do produto';
-    searchInput.className = 'w-full py-2 px-3 border border-emerald-600 rounded-md';
-
-    let isExpanded = false; // Controla o estado de expansão
-      }
-    });
-    searchButton.addEventListener('click', () => {
-      if (!isExpanded) {
-        searchButton.classList.add('w-96'); // Aumenta a largura do botão
-        searchButton.innerHTML = ''; // Remove o conteúdo atual do botão
-        searchButton.appendChild(searchInput); // Adiciona o campo de busca ao botão
-        searchInput.style.display = 'block'; // Exibe o campo de busca
-        searchInput.focus(); // Foca no campo de busca automaticamente
-        isExpanded = true;
-      }
-    });
-
-    searchInput.addEventListener('blur', () => {
-      if (isExpanded) {
-        searchButton.classList.remove('w-96'); // Reduz a largura do botão
-        searchInput.style.display = 'none'; // Oculta o campo de busca
-        searchButton.innerHTML = `
-          <span class="flex items-center text-lg font-bold text-white">
-            <span class="material-symbols-outlined text-3xl mx-3"> search </span> Buscar Produtos
-          </span>`;
-        isExpanded = false;
-      }
-    });
-</script>
 </body>
 </html>
+<script>
+    const radioGeneric = document.getElementById('radio-generic');
+    
+    document.addEventListener('click', (event) => {
+        if (!radioGeneric.contains(event.target)) {
+            radioGeneric.checked = false;
+        }
+    });
+</script>
