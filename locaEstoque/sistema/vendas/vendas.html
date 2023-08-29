@@ -10,29 +10,53 @@
     <title>Document</title>
 </head>
 <body>
-<header class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
-    <div class="flex justify-between items-center">
-        <div class="flex items-center">
-            <img class="h-20 w-20 inline" src="Logo.png" alt="Logo">
-            <span class="text-2xl cursor-pointer font-bold mx-4">
-              <span class="w-[291.29px] h-[45px] text-center text-black text-[39px] font-bold uppercase leading-10 tracking-tight" style="font-family: 'Zilla Slab Highlight', cursive;">
-                Locaestoque
-              </span>
+    <header class="p-5 bg-orange-400 h-24 md:flex md:itens-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img class="h-20 w-20 inline" src="../../paginaInicial/img/logo.png" alt="Logo">
+                <span class="text-2xl cursor-pointer font-bold mx-4">
+                  <span class="w-[291.29px] h-[45px] text-center text-black text-[39px] font-bold uppercase leading-10 tracking-tight" style="font-family: 'Zilla Slab Highlight', cursive;">
+                    Locaestoque
+                  </span>
+                </span>
+              </div>
+            <span class="3xl cursor-pointer mx-2 md:hidden block">
+              <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
             </span>
-          </div>
-        <span class="3xl cursor-pointer mx-2 md:hidden block">
-          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-        </span>
+        </div>
+        <div class="md:flex md:items-center gap-6 me-6">
+          <button id="abrirModalf">
+            <a>
+                <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
+            </a>
+        </button>
+        <!-- Modal de Mensagens -->
+        <div id="modalf" class="hidden fixed inset-0 flex items-center justify-end z-10 top-[-25%] transition-opacity duration-300 opacity-0">
+            <div class="mt-4 mr-4 p-6 md:p-8 bg-amber-600 rounded-xl shadow-md relative max-w-xs md:max-w-sm md:h-auto right-0">
+                <span class="fecharf text-4xl absolute top-2 right-2 cursor-pointer">&times;</span>
+                <a class="mt-4">
+                    <i class="fa-solid fa-envelope text-4xl"> MENSAGENS</i>
+                </a>
+                <div class="mt-4 w-80 h-80 bg-amber-100 rounded-3xl"></div>
+            </div>
+        </div>
+    <button id="abrirModalco">
+            <a>
+                <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
+            </a>
+    </button>
+    <div id="modalco" class="hidden fixed inset-0 flex items-center justify-end z-10 top-[-60%] transition-opacity duration-300 opacity-0">
+      <div class="mt-4 mr-4 p-6 md:p-8 bg-amber-600 rounded-xl shadow-md relative max-w-xs md:max-w-sm md:h-auto right-0">
+          <span class="fecharco text-4xl absolute top-2 right-2 cursor-pointer">&times;</span>
+          <a class="block mt-4 text-center">
+              <i class="fa-solid fa-circle-user text-4xl text-black"> Usuario</i>
+          </a>
+          <button class="block w-full bg-emerald-600 text-white px-4 py-2 rounded-md mt-4 hover:bg-green-700 transition duration-300">Trocar Senha</button>
+          <button class="block w-full bg-red-500 text-gray-700 px-4 py-2 rounded-md mt-2 hover:bg-red-600 transition duration-300">Sair</button>
+      </div>
     </div>
-    <div class="md:flex md:items-center gap-6 me-6">
-        <a>
-            <i class="fa-solid fa-envelope text-4xl hover:text-white duration-500 cursor-pointer"></i>
-        </a>
-        <a>
-            <i class="fa-solid fa-circle-user text-4xl hover:text-white duration-500 cursor-pointer"></i>
-        </a>
-    </div>
-</header>
+        </div>
+    </header>
 <main class="grid grid-cols-20 gap-4 max-w-8xl mx-auto">
      <div class="h-20 bg-zinc-300 rounded-3xl mt-8 col-span-12 flex justify-start items-center mx-4 md:mx-40 w-9/12 "> 
         <span class="material-symbols-outlined text-6xl md:text-6xl m-8 md:m-4">
@@ -91,4 +115,56 @@
             radioGeneric.checked = false;
         }
     });
+    document.addEventListener("DOMContentLoaded", function () {
+      const abrirModalfButton = document.getElementById("abrirModalf");
+      const fecharModalfButton = document.querySelector("#modalf .fecharf");
+      const modalf = document.getElementById("modalf");
+
+      const abrirModalcoButton = document.getElementById("abrirModalco");
+      const fecharModalcoButton = document.querySelector("#modalco .fecharco");
+      const modalco = document.getElementById("modalco");
+
+      abrirModalfButton.addEventListener("click", () => {
+          modalf.classList.remove("hidden");
+          setTimeout(() => {
+              modalf.classList.add("opacity-100");
+          }, 10); // Adicione um pequeno atraso para que a transição seja visível
+      });
+
+      fecharModalfButton.addEventListener("click", () => {
+          modalf.classList.remove("opacity-100");
+          setTimeout(() => {
+              modalf.classList.add("hidden");
+          }, 300);
+      });
+
+      abrirModalcoButton.addEventListener("click", () => {
+          modalco.classList.remove("hidden");
+          setTimeout(() => {
+              modalco.classList.add("opacity-100");
+          }, 10); // Adicione um pequeno atraso para que a transição seja visível
+      });
+
+      fecharModalcoButton.addEventListener("click", () => {
+          modalco.classList.remove("opacity-100");
+          setTimeout(() => {
+              modalco.classList.add("hidden");
+          }, 300);
+      });
+
+      window.addEventListener("click", (event) => {
+          if (event.target === modalf) {
+              modalf.classList.remove("opacity-100");
+              setTimeout(() => {
+                  modalf.classList.add("hidden");
+              }, 300);
+          }
+          if (event.target === modalco) {
+              modalco.classList.remove("opacity-100");
+              setTimeout(() => {
+                  modalco.classList.add("hidden");
+              }, 300);
+          }
+      });
+  });
 </script>
